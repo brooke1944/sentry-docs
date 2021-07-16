@@ -6,13 +6,11 @@ redirect_from:
 description: "Learn more about the Issues page and how you can use it to efficiently triage issues."
 ---
 
-The Issues page is where you can find information about errors in your application. Filter by properties such as browser, device, impacted users, or whether the error is unhandled. You can then inspect issue details to better understand the problem and [triage](/product/issues/issue-details/) effectively.
+The **Issues** page displays information about errors in your application. Filter by properties such as browser, device, impacted users, or whether the error is unhandled. You can then inspect issue details to better understand the problem and [triage](/product/issues/issue-details/) effectively.
 
 ![Issues homepage](issues-homepage.png)
 
-A typical application sends a large number of events to Sentry. To make them manageable, we group similar events into issues based on the event stack trace and other information. You can think of an issue as a single bug or problem with your app. This grouping of events into issues allows you to see how frequently a problem is happening and how many users it's affecting. With this information, you can then make decisions about what to do.
-
-From the Issues page, you can begin to triage an issue. Learn more about triaging issues and their different states in [Issue States and Triage](/product/issues/states-triage/).
+A typical application sends a large number of events to Sentry. You can think of an issue as a single bug or problem with your app. To make them manageable, we group similar events into issues based on the event stack trace and other information. This grouping of events into issues allows you to see how frequently a problem is happening and how many users it's affecting.
 
 For each issue, the page displays:
 
@@ -23,8 +21,32 @@ For each issue, the page displays:
 
 You can also hover over the issue title to see the stack trace of the latest event.
 
-When you click on an issue on the main Issues page, the [Issue Details](/product/issues/issue-details) page is displayed.
+When you click on an issue on the main **Issues** page, the [Issue Details](/product/issues/issue-details) page displays.
 
-Learn more about investigating and routing issues:
+From the **Issues** page, you can begin to triage. The page is organized into tabs, each corresponding to a filtered list of issues, and these different lists help you with triaging:
+
+- All Unresolved (`is:unresolved`): All unresolved issues, including issues that need review.
+- For Review (`is:unresolved is:for_review`): Issues that need to be reviewed; for-review issues are a sub-set of all unresolved issues.
+- Ignored (`is:ignored`): All ignored issues.
+- Saved Searches: Select from a set of [recommended](/product/sentry-basics/search/saved-searches/#recommended-searches) and [custom saved searches](/product/sentry-basics/search/saved-searches/#organization-wide-saved-searches). The name of the tab changes based on your selection.
+
+Learn more about triaging issues and their different states in [Issue States and Triage](/product/issues/states-triage/).
+
+### Display Options
+
+<Note>
+  The "Events as %" display option is available only if you're in the Early Adopter program. Features available to Early Adopters are still in-progress and may have bugs. We recognize the irony.
+
+  If you’re interested in being an Early Adopter, you can turn your organization’s Early Adopter status on/off in General Settings. This will affect all users in your organization and can be turned back off just as easily.
+</Note>
+
+The Display dropdown lets you toggle between viewing the event count for each issue or viewing the events as a percentage of [sessions](/product/releases/health/#session).
+
+![Issues display dropdown](issues-dropdown.png)
+
+This option is available when you select a project that has [release health set up](/product/releases/health/setup) and there are issues and sessions in the selected period.
+
+
+## Learn More
 
 <PageGrid />

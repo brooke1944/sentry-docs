@@ -1,8 +1,10 @@
 <Note>
 
-_Sentry's Next.js SDK enables automatic reporting of errors and exceptions._
+Sentry's Next.js SDK enables automatic reporting of errors and exceptions.
 
 </Note>
+
+Currently, the minimum Next.js supported version is `10.0.8`.
 
 Features:
 
@@ -10,11 +12,12 @@ Features:
 - Events [enriched](/platforms/javascript/enriching-events/context/) with device data
 - [Breadcrumbs](/platforms/javascript/enriching-events/breadcrumbs/) created for outgoing HTTP request with XHR and Fetch, and console logs
 - [Release Health](/product/releases/health/) for tracking crash-free users and sessions
+- Automatic [Performance Monitoring](/product/performance/) for both the client and server, from version `6.5.0`
 
 Under the hood the SDK relies on our [React SDK](/platforms/javascript/guides/react/) on the frontend and [Node SDK](/platforms/node) on the backend, which makes all features available in those SDKs also available in this SDK.
 
-<Alert level="warning" title="Experimental Plugin">
+<Alert level="info" title="Early Adopter">
 
-The SDK relies on the experimental plugin system of Next.js. This restricts the SDK to running on the production server (it runs on the client in both dev and production), and means changes to the plugin system may prevent the SDK from working as expected. We recognize the irony.
+We are working to resolve [this issue](https://github.com/getsentry/sentry-javascript/issues/3643) in Vercel production environments. The SDK is currently unable to pick up errors and/or transactions when calling serverless API routes.
 
 </Alert>
